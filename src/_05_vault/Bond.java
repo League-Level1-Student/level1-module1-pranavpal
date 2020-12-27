@@ -1,14 +1,15 @@
 package _05_vault;
 
 public class Bond {
-	int findCode(int secretCode) {
+	int findCode(vault v) {
 		int i;
 		for (i = 0; i < 1000001; i++) {
-			if (i == secretCode) {
+			
+			if (v.tryCode(i)) {
 				return i;
-			}
+			} 
 		}
-		return 0;	
+		return -1;	
 	}
 	
 }
